@@ -1,0 +1,27 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnkr2s12ifq53"]
+
+[ext_resource type="PackedScene" uid="uid://dty4pey23itwn" path="res://Title Screen/title_screen.tscn" id="1_ff3i8"]
+[ext_resource type="Script" path="res://Main/Main.gd" id="1_tdrqu"]
+[ext_resource type="PackedScene" uid="uid://cfg4sor4sotk6" path="res://Levels/Level0/World.tscn" id="2_pnyky"]
+[ext_resource type="PackedScene" uid="uid://b5g4ecd52xbh8" path="res://Levels/Level1/level_1.tscn" id="3_mbjtg"]
+[ext_resource type="PackedScene" uid="uid://boov7v1d5m737" path="res://Levels/Level2/Level2.tscn" id="4_rhx5p"]
+[ext_resource type="PackedScene" uid="uid://c4jomke0uytf3" path="res://Levels/Level3/level_3.tscn" id="5_xov0i"]
+[ext_resource type="PackedScene" uid="uid://b5jjyknv5cr8a" path="res://Levels/Level4/level_4.tscn" id="6_a1icu"]
+[ext_resource type="PackedScene" uid="uid://d4l45qf6ebl81" path="res://Levels/Level5/level_5.tscn" id="7_jo0bc"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_tdrqu")
+level0 = ExtResource("2_pnyky")
+level1 = ExtResource("3_mbjtg")
+level2 = ExtResource("4_rhx5p")
+level3 = ExtResource("5_xov0i")
+level4 = ExtResource("6_a1icu")
+level5 = ExtResource("7_jo0bc")
+
+[node name="TitleScreen" parent="." instance=ExtResource("1_ff3i8")]
+
+[connection signal="charge" from="TitleScreen" to="." method="_on_title_screen_charge"]
+[connection signal="down" from="TitleScreen" to="." method="_on_title_screen_down"]
+[connection signal="final" from="TitleScreen" to="." method="_on_title_screen_final"]
+[connection signal="intro" from="TitleScreen" to="." method="_on_title_screen_intro"]
+[connection signal="walls" from="TitleScreen" to="." method="_on_title_screen_walls"]

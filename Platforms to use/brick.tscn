@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dktpusbtco6y"]
+
+[ext_resource type="Script" path="res://Platforms to use/brick.gd" id="1_v27i0"]
+
+[sub_resource type="Gradient" id="Gradient_eejnx"]
+offsets = PackedFloat32Array(0, 0.637838, 0.994595, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.637838, 0.637838, 0.637838, 1, 0.594595, 0.594595, 0.594595, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oijtc"]
+gradient = SubResource("Gradient_eejnx")
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 0)
+
+[node name="Brick" type="Node2D"]
+script = ExtResource("1_v27i0")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AnimatableBody2D"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 64, 0, 64)
+
+[node name="Polygon2D" type="Polygon2D" parent="AnimatableBody2D"]
+texture = SubResource("GradientTexture2D_oijtc")
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 64, 0, 64)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-4, -24, 68, -24, 68, 8, -4, 8)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered" flags=18]

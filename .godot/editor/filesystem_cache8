@@ -1,0 +1,69 @@
+2a60927148abd1d33b818b535e306557
+::res://::1683499682
+default_env.tres::::-1::1682993780::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1683492133::0::1::::<><>::
+::res://Art/::1683401441
+Circle.png::CompressedTexture2D::4751864801222004318::1682993780::1682993780::1::::<><>::
+icon.png::CompressedTexture2D::6322353581523844504::1682993780::1682993780::1::::<><>::
+Screenshot2.png::CompressedTexture2D::7567087700406585471::1682993780::1682993780::1::::<><>::
+Screenshot.png::CompressedTexture2D::4957599078126867530::1682993780::1682993780::1::::<><>::
+Tileset2.0.png::CompressedTexture2D::5859462165996868941::1683401441::1683401441::1::::<><>::
+TilesetOf5.png::CompressedTexture2D::8814284451542153271::1683150965::1683150993::1::::<><>::
+::res://Boring Stuff (not automated with Python)/::1683396939
+LICENSE.md::TextFile::-1::1682993780::0::1::::<><>::
+README.md::TextFile::-1::1682993780::0::1::::<><>::
+::res://Levels/::1683440644
+::res://Levels/Level0/::1683490454
+World.gd::GDScript::-1::1683489293::0::1::::<>Node2D<>::
+World.tscn::PackedScene::5137965552112069295::1683490454::0::1::::<><>::res://Levels/Level0/World.gd<>uid://dxeva15lnv7wm<>uid://lrbobe03y04y<>uid://cvboky6pqlyk0<>uid://dyq8g35t6hsjf<>uid://cqindn5hr3fl7<>uid://c5ad2emke4w2n<>uid://dfx3mv6vva7it<>uid://clamexjihnbg7<>uid://dktpusbtco6y<>uid://bwbd5amhfsnrb
+::res://Levels/Level0/PlatformsL0/::1683490453
+CirclePlatform.gd::GDScript::-1::1682993780::0::1::::<>CharacterBody2D<>::
+CirclePlatform.tscn::PackedScene::5913173295404433914::1683406727::0::1::::<><>::uid://b8x3rv8tdlcbm<>res://Levels/Level0/PlatformsL0/CirclePlatform.gd
+MovingPlatform.gd::GDScript::-1::1683483896::0::1::::<>Node2D<>::
+MovingPlatform.tscn::PackedScene::8878840235884691719::1683249709::0::1::::<><>::res://Platforms/MovingPlatform.gd
+TileMap.tscn::PackedScene::8783139435087644240::1683490453::0::1::::<><>::uid://dxtx8htjdu1mh<>uid://cpqmqrtypu150
+::res://Levels/Level1/::1683490454
+Background.gd::GDScript::-1::1683399097::0::1::::<>ColorRect<>::
+level_1.gd::GDScript::-1::1683489159::0::1::::<>Node2D<>::
+level_1.tscn::PackedScene::4506240306405441019::1683490454::0::1::::<><>::uid://dxeva15lnv7wm<>res://Levels/Level1/level_1.gd<>uid://cvboky6pqlyk0<>uid://lrbobe03y04y<>uid://dyq8g35t6hsjf<>res://Levels/Level0/PlatformsL0/MovingPlatform.gd
+::res://Levels/Level2/::1683491884
+Level2.gd::GDScript::-1::1683489159::0::1::::<>Node2D<>::
+Level2.tscn::PackedScene::3399299128767617528::1683491884::0::1::::<><>::res://Levels/Level2/Level2.gd<>uid://dxeva15lnv7wm<>uid://cvboky6pqlyk0<>uid://dyq8g35t6hsjf<>uid://lrbobe03y04y
+tilemap_2.tscn::PackedScene::5660009071715943298::1683419873::0::1::::<><>::uid://cpqmqrtypu150
+::res://Levels/Level3/::1683490581
+level_3.gd::GDScript::-1::1683489159::0::1::::<>Node2D<>::
+level_3.tscn::PackedScene::6827769232677565362::1683490581::0::1::::<><>::res://Levels/Level3/level_3.gd<>uid://dxeva15lnv7wm<>uid://cvboky6pqlyk0<>uid://lrbobe03y04y<>uid://dfx3mv6vva7it<>uid://dktpusbtco6y<>uid://c5ad2emke4w2n<>uid://clamexjihnbg7
+::res://Levels/Level4/::1683490739
+level_4.gd::GDScript::-1::1683489166::0::1::::<>Node2D<>::
+level_4.tscn::PackedScene::4511255250919518454::1683490739::0::1::::<><>::res://Levels/Level4/level_4.gd<>uid://dxeva15lnv7wm<>uid://cvboky6pqlyk0<>uid://lrbobe03y04y<>uid://dfx3mv6vva7it<>uid://bwbd5amhfsnrb<>uid://clamexjihnbg7
+::res://Levels/Level5/::1683492121
+level_5.gd::GDScript::-1::1683489293::0::1::::<>Node2D<>::
+level_5.tscn::PackedScene::9219261887995795216::1683492121::0::1::::<><>::res://Levels/Level5/level_5.gd<>uid://dxeva15lnv7wm<>uid://cvboky6pqlyk0<>uid://lrbobe03y04y<>uid://clamexjihnbg7<>uid://dfx3mv6vva7it<>uid://bwbd5amhfsnrb<>uid://dktpusbtco6y<>uid://c5ad2emke4w2n
+::res://Main/::1683490453
+Main.gd::GDScript::-1::1683490114::0::1::::<>Node<>::
+Main.tscn::PackedScene::8093442188049664608::1683490453::0::1::::<><>::uid://dty4pey23itwn<>res://Main/Main.gd<>uid://cfg4sor4sotk6<>uid://b5g4ecd52xbh8<>uid://boov7v1d5m737<>uid://c4jomke0uytf3<>uid://b5jjyknv5cr8a<>uid://d4l45qf6ebl81
+::res://Platforms to use/::1683488331
+Block.gd::GDScript::-1::1683436104::0::1::::<>Node2D<>::
+block.tscn::PackedScene::3932875365142425271::1683440412::0::1::::<><>::res://Platforms to use/Block.gd
+bouncer.gd::GDScript::-1::1683430478::0::1::::<>Node2D<>::
+bouncer.tscn::PackedScene::6878737273032824547::1683488331::0::1::::<><>::res://Platforms to use/bouncer.gd
+brick.gd::GDScript::-1::1683430478::0::1::::<>Node2D<>::
+brick.tscn::PackedScene::232391796570235214::1683436461::0::1::::<><>::res://Platforms to use/brick.gd
+MovingPlatform.gd::GDScript::-1::1683172897::0::1::::<>Node2D<>::
+MovingPlatform.tscn::PackedScene::8878840235884691719::1683406803::0::1::::<><>::res://Platforms to use/MovingPlatform.gd
+SlopeLeft.gd::GDScript::-1::1683253358::0::1::::<>Node2D<>::
+SlopeLeft.tscn::PackedScene::7559409614798693843::1683440412::0::1::::<><>::res://Platforms to use/SlopeLeft.gd
+SlopeRight.gd::GDScript::-1::1683253358::0::1::::<>Node2D<>::
+SlopeRight.tscn::PackedScene::5545655616807018632::1683406778::0::1::::<><>::res://Platforms to use/SlopeRight.gd
+::res://Player/::1683490739
+Player.gd::GDScript::-1::1683490739::0::1::::<>CharacterBody2D<>::
+Player.tscn::PackedScene::6249740666529434949::1683488879::0::1::::<><>::res://Player/Player.gd<>res://Player/Sprite.gd
+Sprite.gd::GDScript::-1::1682993780::0::1::::<>Node2D<>::
+::res://ScreenCamera/::1683421703
+ScreenCamera.gd::GDScript::-1::1683419489::0::1::::<>Camera2D<>::
+ScreenCamera.tscn::PackedScene::807257479821651446::1683421703::0::1::::<><>::res://ScreenCamera/ScreenCamera.gd
+::res://Title Screen/::1683490454
+LevelSelect.gd::GDScript::-1::1683341847::0::1::::<>CanvasLayer<>::
+Title.gd::GDScript::-1::1683341776::0::1::::<>CanvasLayer<>::
+title_screen.gd::GDScript::-1::1683406848::0::1::::<>CanvasLayer<>::
+title_screen.tscn::PackedScene::8544182974431371557::1683490454::0::1::::<><>::res://Title Screen/title_screen.gd<>res://Title Screen/Title.gd<>res://Title Screen/LevelSelect.gd

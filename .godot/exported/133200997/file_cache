@@ -1,0 +1,20 @@
+res://Levels/Level0/PlatformsL0/CirclePlatform.tscn::d35b4dfcf0a9b5cdec9aeb9b4f82b32b::1683406727::res://.godot/exported/133200997/export-6d0f078f97fb885edcec7098fff884a4-CirclePlatform.scn
+res://Levels/Level0/PlatformsL0/MovingPlatform.tscn::e48d14e2466f1fc0503f4181961071fa::1683249709::res://.godot/exported/133200997/export-1e89028397c2333881eef9b47006d2e2-MovingPlatform.scn
+res://Levels/Level0/PlatformsL0/TileMap.tscn::7956e7d4f63343cdb13f9182b96143f0::1683501654::res://.godot/exported/133200997/export-a5e828c3c9189eae4cc2632eb0d2bdb8-TileMap.scn
+res://Levels/Level0/World.tscn::1b140cd3b3a176d2d9e21912e1576310::1683501655::res://.godot/exported/133200997/export-748dede2493ae79ad3c3f50406be4c7a-World.scn
+res://Levels/Level1/level_1.tscn::f06e3411893daf4508a95f8380670ce7::1683501655::res://.godot/exported/133200997/export-0a5b1e6b4f63060ae65c4be763dc3ccd-level_1.scn
+res://Levels/Level2/Level2.tscn::71f852bd7eb5fe6579edd12e436424f4::1683501654::res://.godot/exported/133200997/export-2a2e301c4b746b2639bed7f04555c843-Level2.scn
+res://Levels/Level2/tilemap_2.tscn::b2388e8006036e72c508512ec8562836::1683419873::res://.godot/exported/133200997/export-fb1a1137f94abe87a8dbd15aa2300ff3-tilemap_2.scn
+res://Levels/Level3/level_3.tscn::987d740b7a4c3d5caa51a70f1ccb2c0d::1683501654::res://.godot/exported/133200997/export-ae71e1ee133061f77f0ecbdc10d9244b-level_3.scn
+res://Levels/Level4/level_4.tscn::b6c002c5e89b4a9ec8131738d4dd588e::1683501654::res://.godot/exported/133200997/export-cc72d33927c490c0d87b79279a193ace-level_4.scn
+res://Levels/Level5/level_5.tscn::a2f70c82952047d07b1aca556a25ace1::1683501654::res://.godot/exported/133200997/export-eb6bc2905a46a1d9f2991a389010b08c-level_5.scn
+res://Main/Main.tscn::4960204f2e1c95b6664f86c4af005268::1683502111::res://.godot/exported/133200997/export-ebc741d9ca7bc58bf3f4d09c000e7715-Main.scn
+res://Platforms to use/block.tscn::2ac3b4f1f5f8a8ae4e7a69b15845ccf1::1683440412::res://.godot/exported/133200997/export-78b9a9270f7d91c2feac1a70d8d4a239-block.scn
+res://Platforms to use/bouncer.tscn::c3b6d1a1c769987f96b40eef610a9c40::1683488331::res://.godot/exported/133200997/export-94fef2cd05a1f7b26f7d19d998839d11-bouncer.scn
+res://Platforms to use/brick.tscn::bc4263f14e553d65d9c674a5e8f96925::1683436461::res://.godot/exported/133200997/export-51acef586be2a74cdd3db2aeb105de4f-brick.scn
+res://Platforms to use/MovingPlatform.tscn::9fdd3625ce378f1b450ad38f449bb159::1683406803::res://.godot/exported/133200997/export-07dccbb9060292b77801ef644d5978f2-MovingPlatform.scn
+res://Platforms to use/SlopeLeft.tscn::b4c8f51f735bb6eaa816b859b4fc3b0b::1683440412::res://.godot/exported/133200997/export-0b5237352fd72e6f184fdde0519ccdaa-SlopeLeft.scn
+res://Platforms to use/SlopeRight.tscn::d62746c51d23b6347a509cc68641a5b2::1683406778::res://.godot/exported/133200997/export-e155b63583e9fd2c23e8e252ad01b969-SlopeRight.scn
+res://Player/Player.tscn::6a6d27185b46224d49d45ffeb6870340::1683488879::res://.godot/exported/133200997/export-48b487cb3fbab0e0d627d8f8de2ba1d9-Player.scn
+res://ScreenCamera/ScreenCamera.tscn::80649577e90a97de1ff65d761697faf4::1683421703::res://.godot/exported/133200997/export-18afbd2c974f1f7c7db0b0b5768b5a80-ScreenCamera.scn
+res://Title Screen/title_screen.tscn::3a3d6baa5da000e6747f065e92e274fe::1683501655::res://.godot/exported/133200997/export-f0d1f7dada7d208b8d9df9cd4ac3b331-title_screen.scn

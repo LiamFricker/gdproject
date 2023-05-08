@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=3 uid="uid://dty4pey23itwn"]
+
+[ext_resource type="Script" path="res://Title Screen/title_screen.gd" id="1_vvij7"]
+[ext_resource type="Script" path="res://Title Screen/Title.gd" id="2_c4tjr"]
+[ext_resource type="Script" path="res://Title Screen/LevelSelect.gd" id="3_8wp8g"]
+
+[node name="TitleScreen" type="CanvasLayer"]
+script = ExtResource("1_vvij7")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1984.0
+offset_bottom = 1088.0
+color = Color(0.101961, 0.0901961, 0.286275, 1)
+
+[node name="Title" type="CanvasLayer" parent="."]
+script = ExtResource("2_c4tjr")
+
+[node name="Title" type="Label" parent="Title"]
+offset_right = 1984.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 100
+text = "Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level_Select" type="Button" parent="Title"]
+offset_left = 512.0
+offset_top = 512.0
+offset_right = 1472.0
+offset_bottom = 768.0
+theme_override_font_sizes/font_size = 50
+text = "Level Select"
+
+[node name="LevelSelect" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("3_8wp8g")
+
+[node name="Walls" type="Button" parent="LevelSelect"]
+offset_left = 640.0
+offset_top = 416.0
+offset_right = 931.0
+offset_bottom = 672.0
+theme_override_font_sizes/font_size = 40
+disabled = true
+text = "Walls"
+
+[node name="Level Select" type="Label" parent="LevelSelect"]
+offset_right = 1984.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 75
+text = "Level Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Intro" type="Button" parent="LevelSelect"]
+offset_left = 256.0
+offset_top = 416.0
+offset_right = 547.0
+offset_bottom = 672.0
+theme_override_font_sizes/font_size = 40
+disabled = true
+text = "Intro"
+
+[node name="Down" type="Button" parent="LevelSelect"]
+offset_left = 1024.0
+offset_top = 416.0
+offset_right = 1315.0
+offset_bottom = 672.0
+theme_override_font_sizes/font_size = 40
+disabled = true
+text = "Down"
+
+[node name="Charge" type="Button" parent="LevelSelect"]
+offset_left = 1408.0
+offset_top = 416.0
+offset_right = 1699.0
+offset_bottom = 672.0
+theme_override_font_sizes/font_size = 40
+disabled = true
+text = "Charge"
+
+[node name="Final" type="Button" parent="LevelSelect"]
+offset_left = 864.0
+offset_top = 736.0
+offset_right = 1155.0
+offset_bottom = 992.0
+theme_override_font_sizes/font_size = 40
+disabled = true
+text = "Final"
+
+[connection signal="pressed" from="Title/Level_Select" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="LevelSelect/Walls" to="." method="_on_walls_pressed"]
+[connection signal="pressed" from="LevelSelect/Intro" to="." method="_on_intro_pressed"]
+[connection signal="pressed" from="LevelSelect/Down" to="." method="_on_down_pressed"]
+[connection signal="pressed" from="LevelSelect/Charge" to="." method="_on_charge_pressed"]
+[connection signal="pressed" from="LevelSelect/Final" to="." method="_on_final_pressed"]

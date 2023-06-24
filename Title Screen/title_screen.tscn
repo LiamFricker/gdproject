@@ -79,10 +79,37 @@ theme_override_font_sizes/font_size = 40
 disabled = true
 text = "Charge"
 
-[node name="Final" type="Button" parent="LevelSelect"]
-offset_left = 864.0
+[node name="Challenge" type="Button" parent="LevelSelect"]
+offset_left = 256.0
 offset_top = 736.0
-offset_right = 1155.0
+offset_right = 547.0
+offset_bottom = 992.0
+theme_override_font_sizes/font_size = 40
+disabled = true
+text = "Challenge"
+
+[node name="Basics" type="Button" parent="LevelSelect"]
+offset_left = 640.0
+offset_top = 736.0
+offset_right = 931.0
+offset_bottom = 992.0
+theme_override_font_sizes/font_size = 40
+disabled = true
+text = "Basics"
+
+[node name="Finale" type="Button" parent="LevelSelect"]
+offset_left = 1024.0
+offset_top = 736.0
+offset_right = 1315.0
+offset_bottom = 992.0
+theme_override_font_sizes/font_size = 40
+disabled = true
+text = "Finale"
+
+[node name="Boss" type="Button" parent="LevelSelect"]
+offset_left = 1408.0
+offset_top = 736.0
+offset_right = 1699.0
 offset_bottom = 992.0
 theme_override_font_sizes/font_size = 40
 disabled = true
@@ -93,4 +120,7 @@ text = "Final"
 [connection signal="pressed" from="LevelSelect/Intro" to="." method="_on_intro_pressed"]
 [connection signal="pressed" from="LevelSelect/Down" to="." method="_on_down_pressed"]
 [connection signal="pressed" from="LevelSelect/Charge" to="." method="_on_charge_pressed"]
-[connection signal="pressed" from="LevelSelect/Final" to="." method="_on_final_pressed"]
+[connection signal="pressed" from="LevelSelect/Challenge" to="." method="_on_challenge_pressed"]
+[connection signal="pressed" from="LevelSelect/Basics" to="." method="_on_basics_pressed"]
+[connection signal="pressed" from="LevelSelect/Finale" to="." method="_on_finale_pressed"]
+[connection signal="pressed" from="LevelSelect/Boss" to="." method="_on_boss_pressed"]

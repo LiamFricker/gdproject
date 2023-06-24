@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1hjmv62kd3e2"]
+
+[ext_resource type="Texture2D" uid="uid://5ta8b782pr6m" path="res://Art/leaf.png" id="1_1ehsg"]
+[ext_resource type="Script" path="res://System/leaf_0.gd" id="1_qq2h1"]
+
+[node name="Leaf0" type="Node2D"]
+z_index = 10
+script = ExtResource("1_qq2h1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1ehsg")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-7, -17, 7, -17, 7, 18, -7, 18)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

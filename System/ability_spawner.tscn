@@ -1,0 +1,21 @@
+[gd_scene load_steps=9 format=3 uid="uid://dayer1c7ki5cs"]
+
+[ext_resource type="Script" path="res://Levels/Level0/AbilitySpawner.gd" id="1_5rnxy"]
+[ext_resource type="PackedScene" uid="uid://dstyksrudtjgp" path="res://Mobs/enemy_fireball.tscn" id="2_dvc06"]
+[ext_resource type="PackedScene" uid="uid://tvvvlosjhcrx" path="res://Mobs/bone.tscn" id="3_llxih"]
+[ext_resource type="PackedScene" uid="uid://dj8kv0bia7xyq" path="res://Mobs/bomb.tscn" id="4_y5bkm"]
+[ext_resource type="PackedScene" uid="uid://bd7jj0kgjdjfj" path="res://Mobs/egg.tscn" id="5_54eic"]
+[ext_resource type="PackedScene" uid="uid://0hc7w5a177v8" path="res://Mobs/activesquare.tscn" id="6_22auq"]
+[ext_resource type="PackedScene" uid="uid://d1hjmv62kd3e2" path="res://System/leaf_0.tscn" id="7_4ygc1"]
+[ext_resource type="PackedScene" uid="uid://c0hd2l17aqi6c" path="res://System/money_0.tscn" id="8_4lexl"]
+
+[node name="AbilitySpawner" type="Node2D"]
+z_index = 9
+script = ExtResource("1_5rnxy")
+fireball = ExtResource("2_dvc06")
+bone = ExtResource("3_llxih")
+bomb = ExtResource("4_y5bkm")
+egg = ExtResource("5_54eic")
+enemy = ExtResource("6_22auq")
+leaf0 = ExtResource("7_4ygc1")
+gold0 = ExtResource("8_4lexl")

@@ -1,0 +1,94 @@
+[gd_scene load_steps=11 format=3 uid="uid://dj8kv0bia7xyq"]
+
+[ext_resource type="Script" path="res://Mobs/bomb.gd" id="1_680cu"]
+[ext_resource type="Texture2D" uid="uid://d3w2dbjbwot51" path="res://Art/botbomb.png" id="2_b4l2o"]
+[ext_resource type="PackedScene" uid="uid://26bmcw3h0c6k" path="res://Mobs/enemy_flame.tscn" id="2_r140v"]
+[ext_resource type="Texture2D" uid="uid://bkv04ocr0ijph" path="res://Art/Explosion/explosion.png" id="3_ybbbh"]
+[ext_resource type="Texture2D" uid="uid://dl4vv4t0fiicv" path="res://Art/Explosion/explosion(0).png" id="4_hoo8g"]
+[ext_resource type="Texture2D" uid="uid://tmrpv73fcclr" path="res://Art/Explosion/explosion(1).png" id="5_ycjbj"]
+[ext_resource type="Texture2D" uid="uid://dj4i4bh1wixnw" path="res://Art/Explosion/explosion(3).png" id="6_m1cvp"]
+[ext_resource type="Texture2D" uid="uid://bq3oc42qeq412" path="res://Art/Explosion/explosion(4).png" id="7_y4a77"]
+[ext_resource type="Texture2D" uid="uid://b3pyulkep03ek" path="res://Art/Explosion/explosion(5).png" id="8_gxq5p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5vv8c"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ybbbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hoo8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ycjbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m1cvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_y4a77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gxq5p")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 10.0
+}]
+
+[node name="bomb" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+linear_velocity = Vector2(250, -550)
+script = ExtResource("1_680cu")
+flame = ExtResource("2_r140v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_b4l2o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+scale = Vector2(0.615385, 0.53876)
+sprite_frames = SubResource("SpriteFrames_5vv8c")
+animation = &"explode"
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[node name="ExplosionTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="Hurtbox" type="Area2D" parent="."]
+visible = false
+collision_layer = 256
+collision_mask = 32
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox"]
+position = Vector2(-61.0795, -9.71591)
+scale = Vector2(1.42045, 0.511363)
+polygon = PackedVector2Array(33.8481, -10.3333, 51.4481, -10.3333, 51.4481, 48.3334, 33.8481, 48.3334)
+
+[node name="Collision" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 14
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision"]
+position = Vector2(-61.0795, -9.71591)
+scale = Vector2(1.42045, 0.511363)
+polygon = PackedVector2Array(33.8481, -10.3333, 51.4481, -10.3333, 51.4481, 48.3334, 33.8481, 48.3334)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
+[connection signal="timeout" from="ExplosionTimer" to="." method="_on_explosion_timer_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]

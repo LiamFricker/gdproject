@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://dstyksrudtjgp"]
+
+[ext_resource type="Script" path="res://Mobs/enemy_fireball.gd" id="1_kg22k"]
+[ext_resource type="Texture2D" uid="uid://c3tgmkeq5jywu" path="res://Art/Fireball/fireball.png" id="2_eb74o"]
+[ext_resource type="Texture2D" uid="uid://bg5d0ybjw22vs" path="res://Art/Fireball/fireball(1).png" id="3_qjuvf"]
+[ext_resource type="Texture2D" uid="uid://hr4acty6jxa" path="res://Art/Fireball/fireball(0).png" id="4_ns4fh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_upoxv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eb74o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qjuvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ns4fh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qjuvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_eb74o")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="enemy_fireball" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+linear_velocity = Vector2(300, 0)
+script = ExtResource("1_kg22k")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 33
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox"]
+polygon = PackedVector2Array(-12, -8, 11, -8, 11, 10, -12, 10)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(-4.26326e-14, 2.38419e-07)
+scale = Vector2(-0.584806, 0.738428)
+sprite_frames = SubResource("SpriteFrames_upoxv")
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_timer_timeout"]

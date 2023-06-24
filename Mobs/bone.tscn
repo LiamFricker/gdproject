@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://tvvvlosjhcrx"]
+
+[ext_resource type="Texture2D" uid="uid://ceggngk14xx00" path="res://Art/bone.png" id="1_jbwty"]
+[ext_resource type="Script" path="res://Mobs/bone.gd" id="1_q5m75"]
+
+[node name="bone" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+linear_velocity = Vector2(250, -550)
+script = ExtResource("1_q5m75")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, -4.76837e-07)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_jbwty")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 33
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox"]
+position = Vector2(-61.0795, -9.71591)
+scale = Vector2(1.42045, 0.511363)
+polygon = PackedVector2Array(32, 8, 54, 8, 54, 30, 32, 30)
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

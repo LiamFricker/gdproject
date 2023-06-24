@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccgu6rjpt3ak8"]
+
+[ext_resource type="Script" path="res://Title Screen/game_over_screen.gd" id="1_4ragx"]
+
+[node name="GameOverScreen" type="CanvasLayer"]
+script = ExtResource("1_4ragx")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1984.0
+offset_bottom = 1088.0
+color = Color(0.101961, 0.0901961, 0.286275, 1)
+
+[node name="Title" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="Title"]
+offset_right = 1984.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 100
+text = "Gameover"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" type="Button" parent="Title"]
+offset_left = 518.0
+offset_top = 381.0
+offset_right = 1473.0
+offset_bottom = 632.0
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Continue"
+
+[node name="MainMenu" type="Button" parent="Title"]
+offset_left = 518.0
+offset_top = 697.0
+offset_right = 1473.0
+offset_bottom = 948.0
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Main Menu"
+
+[connection signal="pressed" from="Title/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Title/MainMenu" to="." method="_on_main_menu_pressed"]

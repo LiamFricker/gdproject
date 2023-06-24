@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnkr2s12ifq53"]
+[gd_scene load_steps=13 format=3 uid="uid://dnkr2s12ifq53"]
 
 [ext_resource type="PackedScene" uid="uid://dty4pey23itwn" path="res://Title Screen/title_screen.tscn" id="1_ff3i8"]
 [ext_resource type="Script" path="res://Main/Main.gd" id="1_tdrqu"]
@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://c4jomke0uytf3" path="res://Levels/Level3/level_3.tscn" id="5_xov0i"]
 [ext_resource type="PackedScene" uid="uid://b5jjyknv5cr8a" path="res://Levels/Level4/level_4.tscn" id="6_a1icu"]
 [ext_resource type="PackedScene" uid="uid://d4l45qf6ebl81" path="res://Levels/Level5/level_5.tscn" id="7_jo0bc"]
+[ext_resource type="PackedScene" uid="uid://d2h11ltmypf2y" path="res://Levels/LevelA-1/level_a_1.tscn" id="8_wuox0"]
+[ext_resource type="PackedScene" uid="uid://ccgu6rjpt3ak8" path="res://Title Screen/game_over_screen.tscn" id="9_754ig"]
+[ext_resource type="PackedScene" uid="uid://cp4m3wcie5hi3" path="res://Levels/LevelA-2/level_a_2.tscn" id="9_jsbx8"]
+[ext_resource type="PackedScene" uid="uid://d0hf7xmuioito" path="res://Levels/LevelA-3/level_a_3.tscn" id="10_g5q7q"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_tdrqu")
@@ -17,11 +21,14 @@ level2 = ExtResource("4_rhx5p")
 level3 = ExtResource("5_xov0i")
 level4 = ExtResource("6_a1icu")
 level5 = ExtResource("7_jo0bc")
+levela_1 = ExtResource("8_wuox0")
+levela_2 = ExtResource("9_jsbx8")
+levela_3 = ExtResource("10_g5q7q")
 
 [node name="TitleScreen" parent="." instance=ExtResource("1_ff3i8")]
 
-[connection signal="charge" from="TitleScreen" to="." method="_on_title_screen_charge"]
-[connection signal="down" from="TitleScreen" to="." method="_on_title_screen_down"]
-[connection signal="final" from="TitleScreen" to="." method="_on_title_screen_final"]
-[connection signal="intro" from="TitleScreen" to="." method="_on_title_screen_intro"]
-[connection signal="walls" from="TitleScreen" to="." method="_on_title_screen_walls"]
+[node name="GameOverScreen" parent="." instance=ExtResource("9_754ig")]
+visible = false
+
+[connection signal="continue_game" from="GameOverScreen" to="." method="_on_game_over_screen_continue_game"]
+[connection signal="main_menu" from="GameOverScreen" to="." method="_on_game_over_screen_main_menu"]

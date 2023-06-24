@@ -10,7 +10,7 @@ extends Node2D
 @onready var Animator := $AnimationPlayer
 
 var previous_frame_velocity := Vector2(0,0)
-
+var isNotHurt = false
 
 # Avoid errors
 func _ready() -> void:
@@ -20,10 +20,14 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	if previous_frame_velocity.y >= 0 and Player.velocity.y < 0:
+	if previous_frame_velocity.y >= 0 and Player.velocity.y < 0 and isNotHurt:
 		Animator.play("Jump")
-	elif previous_frame_velocity.y > 0 and Player.is_on_floor():
+	elif previous_frame_velocity.y > 0 and Player.is_on_floor() and isNotHurt:
 		Animator.play("Land")
 	
 	# It's important that this is the last thing done
 	previous_frame_velocity = Player.velocity
+
+func _playHurt() -> void:
+	isNotHurt = false
+	Animator.play("Hurt")

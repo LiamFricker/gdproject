@@ -1,0 +1,137 @@
+[gd_scene load_steps=12 format=3 uid="uid://co0aawujjuwle"]
+
+[ext_resource type="Script" path="res://Player/Special.gd" id="1_bft4u"]
+[ext_resource type="Texture2D" uid="uid://wttqljptlcpc" path="res://Art/Bottle/bottle(0).png" id="2_bfpgx"]
+[ext_resource type="PackedScene" uid="uid://dhesfffs7j41h" path="res://Player/flame.tscn" id="2_gxsjg"]
+[ext_resource type="Texture2D" uid="uid://c53tpsyb4b61b" path="res://Art/Bottle/bottle(1).png" id="3_q1jj2"]
+[ext_resource type="Texture2D" uid="uid://b8n6j80id4ijd" path="res://Art/Bottle/bottle(2).png" id="4_s7egh"]
+[ext_resource type="Texture2D" uid="uid://dvoilbvn5bycs" path="res://Art/Bottle/bottle(3).png" id="5_dv2uw"]
+[ext_resource type="Texture2D" uid="uid://du5g5oij3jot6" path="res://Art/Bottle/bottle.png" id="11_ibp8n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8aw41"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bfpgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q1jj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s7egh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dv2uw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="Animation" id="Animation_0jd0c"]
+resource_name = "Break"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Break:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Break:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_8mp2o"]
+resource_name = "Thrown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.785398, 1.5708]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wqkxr"]
+_data = {
+"Break": SubResource("Animation_0jd0c"),
+"Thrown": SubResource("Animation_8mp2o")
+}
+
+[node name="Special" type="RigidBody2D"]
+collision_layer = 32
+collision_mask = 0
+linear_velocity = Vector2(250, -350)
+script = ExtResource("1_bft4u")
+flame = ExtResource("2_gxsjg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 18, 0, 18, -18, 0, -18)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 398
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(0, 0, 18, 0, 18, -18, 0, -18)
+
+[node name="Break" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(7, -17)
+scale = Vector2(0.132075, 0.133333)
+sprite_frames = SubResource("SpriteFrames_8aw41")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7, -9.1875)
+rotation = -0.785398
+scale = Vector2(0.132075, 0.136111)
+texture = ExtResource("11_ibp8n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Thrown"
+libraries = {
+"": SubResource("AnimationLibrary_wqkxr")
+}
+
+[node name="FlameTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="FlameTimer" to="." method="_on_flame_timer_timeout"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

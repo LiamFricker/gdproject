@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8ahmirelnuuo"]
+
+[ext_resource type="Script" path="res://Player/Melee.gd" id="1_8x4qt"]
+[ext_resource type="Texture2D" uid="uid://cadppfn8k02jn" path="res://Art/Blast.zip/blast.png" id="2_tvqa7"]
+[ext_resource type="Texture2D" uid="uid://cwgt406a4xt68" path="res://Art/Blast.zip/blast(3).png" id="3_halm7"]
+[ext_resource type="Texture2D" uid="uid://bfp8xpchxhiye" path="res://Art/Blast.zip/blast(2).png" id="4_x1kvo"]
+[ext_resource type="Texture2D" uid="uid://cs6pbdvl7tvxg" path="res://Art/Blast.zip/blast(0).png" id="5_jlrur"]
+[ext_resource type="Texture2D" uid="uid://ox6a2reproks" path="res://Art/Blast.zip/blast(1).png" id="6_yu3dh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tyqeo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_halm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x1kvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jlrur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yu3dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yu3dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x1kvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_halm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tvqa7")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 16.0
+}]
+
+[node name="Melee" type="Area2D"]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_8x4qt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(73, 0)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_tyqeo")
+animation = &"Attack"
+autoplay = "Attack"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(54, 0)
+scale = Vector2(0.2, 0.5)
+sprite_frames = SubResource("SpriteFrames_tyqeo")
+animation = &"Attack"
+autoplay = "Attack"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(16, -11)
+polygon = PackedVector2Array(0, 27, 0, -5, 112, -5, 112, 27)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2(16, -18)
+scale = Vector2(0.67, 1.67)
+polygon = PackedVector2Array(0, 27, 0, -5, 112, -5, 112, 27)
+
+[node name="AttackTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

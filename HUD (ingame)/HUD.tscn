@@ -1,0 +1,243 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2n1hbeqt8i72"]
+
+[ext_resource type="Script" path="res://HUD (ingame)/HUD.gd" id="1_gdqp3"]
+[ext_resource type="Texture2D" uid="uid://du5g5oij3jot6" path="res://Art/Bottle/bottle.png" id="2_i5v48"]
+[ext_resource type="Texture2D" uid="uid://2nnxlssmubnj" path="res://Art/knife.png" id="3_i65ct"]
+[ext_resource type="Texture2D" uid="uid://uwob0hsp16y4" path="res://Art/sicklerang.png" id="4_yxv84"]
+[ext_resource type="Texture2D" uid="uid://bvopqw7fiwpwf" path="res://Art/pot.png" id="5_2xark"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_gdqp3")
+
+[node name="DashCooldown" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 189.0
+offset_right = 232.0
+offset_bottom = 212.0
+theme_override_font_sizes/font_size = 50
+text = "100%"
+
+[node name="DashCharge" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 132.0
+offset_right = 322.0
+offset_bottom = 204.0
+theme_override_font_sizes/font_size = 50
+text = "100%"
+
+[node name="Health" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 71.0
+offset_right = 322.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.882353, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "100%"
+
+[node name="Mana" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 14.0
+offset_right = 322.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0, 0.498039, 0.878431, 1)
+theme_override_font_sizes/font_size = 50
+text = "100%"
+
+[node name="Health2" type="Label" parent="."]
+offset_left = 994.0
+offset_top = 64.0
+offset_right = 1124.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0.882353, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 236.0
+offset_top = 6.0
+offset_right = 236.0
+offset_bottom = 38.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 22.0
+offset_right = 681.0
+offset_bottom = 208.0
+color = Color(0, 0, 0, 0.164706)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 63.0
+offset_right = 664.0
+offset_bottom = 199.0
+texture = ExtResource("2_i5v48")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 394.0
+offset_top = 58.0
+offset_right = 672.0
+offset_bottom = 203.0
+texture = ExtResource("3_i65ct")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 391.0
+offset_top = 58.0
+offset_right = 670.0
+offset_bottom = 206.0
+texture = ExtResource("4_yxv84")
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 383.0
+offset_top = 22.0
+offset_right = 680.0
+offset_bottom = 209.0
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+
+[node name="Subweapon" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 32.0
+offset_right = 554.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0.662745, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "Subweapon: "
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 633.0
+offset_top = 6.0
+offset_right = 633.0
+offset_bottom = 38.0
+
+[node name="ColorRect" type="ColorRect" parent="Control2"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 21.0
+offset_right = 681.0
+offset_bottom = 207.0
+color = Color(0, 0, 0, 0.164706)
+
+[node name="TextureRect" type="TextureRect" parent="Control2"]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 63.0
+offset_right = 664.0
+offset_bottom = 199.0
+texture = ExtResource("2_i5v48")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Control2"]
+visible = false
+layout_mode = 0
+offset_left = 394.0
+offset_top = 58.0
+offset_right = 672.0
+offset_bottom = 203.0
+texture = ExtResource("3_i65ct")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="Control2"]
+visible = false
+layout_mode = 0
+offset_left = 391.0
+offset_top = 58.0
+offset_right = 670.0
+offset_bottom = 206.0
+texture = ExtResource("4_yxv84")
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="Control2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 383.0
+offset_top = 22.0
+offset_right = 680.0
+offset_bottom = 209.0
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+
+[node name="Subweapon" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 32.0
+offset_right = 554.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0.662745, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "Subweapon: "
+
+[node name="Control3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1035.0
+offset_top = 6.0
+offset_right = 1035.0
+offset_bottom = 38.0
+
+[node name="ColorRect" type="ColorRect" parent="Control3"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 22.0
+offset_right = 681.0
+offset_bottom = 208.0
+color = Color(0, 0, 0, 0.164706)
+
+[node name="TextureRect" type="TextureRect" parent="Control3"]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 63.0
+offset_right = 664.0
+offset_bottom = 199.0
+texture = ExtResource("5_2xark")
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="Control3"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 383.0
+offset_top = 22.0
+offset_right = 680.0
+offset_bottom = 209.0
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 0)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 0)
+
+[node name="Subweapon" type="Label" parent="Control3"]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 32.0
+offset_right = 554.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0.662745, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "Healing Pot: "
+
+[connection signal="button_down" from="Control/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Control2/Button" to="." method="_on_button2_button_down"]
+[connection signal="button_down" from="Control3/Button" to="." method="_on_button3_button_down"]

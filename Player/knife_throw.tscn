@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdyw6tv4mmre2"]
+
+[ext_resource type="Script" path="res://Player/knife_throw.gd" id="1_wljrb"]
+[ext_resource type="PackedScene" uid="uid://baey5f7vwi74n" path="res://Player/knife.tscn" id="2_kc4dh"]
+
+[node name="knife throw" type="Node2D"]
+script = ExtResource("1_wljrb")
+knife = ExtResource("2_kc4dh")
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout" flags=18]

@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhesfffs7j41h"]
+
+[ext_resource type="Script" path="res://Player/Flame.gd" id="1_xur33"]
+[ext_resource type="Texture2D" uid="uid://cwgt406a4xt68" path="res://Art/Blast.zip/blast(3).png" id="2_klv0a"]
+[ext_resource type="Texture2D" uid="uid://bfp8xpchxhiye" path="res://Art/Blast.zip/blast(2).png" id="3_t0sqg"]
+[ext_resource type="Texture2D" uid="uid://cs6pbdvl7tvxg" path="res://Art/Blast.zip/blast(0).png" id="4_nsfg8"]
+[ext_resource type="Texture2D" uid="uid://ox6a2reproks" path="res://Art/Blast.zip/blast(1).png" id="5_3dyia"]
+[ext_resource type="Texture2D" uid="uid://cadppfn8k02jn" path="res://Art/Blast.zip/blast.png" id="6_dfxqg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ds2bu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_klv0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t0sqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nsfg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3dyia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3dyia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t0sqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_klv0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dfxqg")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 8.0
+}]
+
+[node name="Flame" type="Area2D"]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_xur33")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, -57)
+rotation = -1.5708
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_ds2bu")
+animation = &"Attack"
+autoplay = "Attack"
+frame = 4
+frame_progress = 0.808769
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1, 25)
+rotation = -1.5708
+scale = Vector2(1.3, 1.5)
+polygon = PackedVector2Array(0, 27, 0, -5, 112, -5, 112, 27)
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="Flametick" type="Timer" parent="."]
+wait_time = 0.9
+one_shot = true
+autostart = true
+
+[node name="FlameRetick" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
+[connection signal="timeout" from="Flametick" to="." method="_on_flametick_timeout"]
+[connection signal="timeout" from="FlameRetick" to="." method="_on_flame_retick_timeout"]

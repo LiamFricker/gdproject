@@ -1,0 +1,233 @@
+[gd_scene load_steps=25 format=3 uid="uid://bd7jj0kgjdjfj"]
+
+[ext_resource type="Script" path="res://Mobs/egg.gd" id="1_nnvfl"]
+[ext_resource type="Texture2D" uid="uid://byohvauetg72r" path="res://Art/Egg/egg(6).png" id="2_1khdw"]
+[ext_resource type="Texture2D" uid="uid://bkv04ocr0ijph" path="res://Art/Explosion/explosion.png" id="2_ago88"]
+[ext_resource type="PackedScene" uid="uid://0hc7w5a177v8" path="res://Mobs/activesquare.tscn" id="2_nbqbm"]
+[ext_resource type="Texture2D" uid="uid://bl6ce4g37db2u" path="res://Art/Egg/egg.png" id="3_dbox2"]
+[ext_resource type="Texture2D" uid="uid://dl4vv4t0fiicv" path="res://Art/Explosion/explosion(0).png" id="3_tl6oh"]
+[ext_resource type="Texture2D" uid="uid://feolhbd41f8d" path="res://Art/Egg/egg(7).png" id="3_xn6f5"]
+[ext_resource type="Texture2D" uid="uid://tmrpv73fcclr" path="res://Art/Explosion/explosion(1).png" id="4_i7ary"]
+[ext_resource type="Texture2D" uid="uid://biquuhaoq1i0c" path="res://Art/Egg/egg(8).png" id="4_kovrh"]
+[ext_resource type="Texture2D" uid="uid://dj4i4bh1wixnw" path="res://Art/Explosion/explosion(3).png" id="5_lgn5w"]
+[ext_resource type="Texture2D" uid="uid://dken5lwprlfgs" path="res://Art/Egg/egg(9).png" id="5_yexbl"]
+[ext_resource type="Texture2D" uid="uid://bq3oc42qeq412" path="res://Art/Explosion/explosion(4).png" id="6_htfhs"]
+[ext_resource type="Texture2D" uid="uid://vrvrl10ecnh5" path="res://Art/Egg/egg(0).png" id="7_45arr"]
+[ext_resource type="Texture2D" uid="uid://b3pyulkep03ek" path="res://Art/Explosion/explosion(5).png" id="7_xqxma"]
+[ext_resource type="Texture2D" uid="uid://8dwh1buil7r4" path="res://Art/Egg/egg(1).png" id="8_mjehp"]
+[ext_resource type="Texture2D" uid="uid://7uwtfpvm4pn3" path="res://Art/Egg/egg(2).png" id="9_2t21f"]
+[ext_resource type="Texture2D" uid="uid://6iduqs841c5g" path="res://Art/Egg/egg(3).png" id="10_0dpkg"]
+[ext_resource type="Texture2D" uid="uid://dlxdwxqs3h723" path="res://Art/Egg/egg(4).png" id="11_qx45b"]
+[ext_resource type="Texture2D" uid="uid://ui12fv0srsrg" path="res://Art/Egg/egg(5).png" id="12_h3m70"]
+[ext_resource type="Texture2D" uid="uid://cic8lk76o4shn" path="res://Art/Explosion/explosion(2).png" id="16_he6y5"]
+
+[sub_resource type="Animation" id="Animation_er2p1"]
+resource_name = "crack"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, -5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.8, 0.3), Vector2(0.8, 0.3), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 10), Vector2(0, 10), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ho8ud"]
+_data = {
+"crack": SubResource("Animation_er2p1")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_527l7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1khdw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xn6f5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kovrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yexbl")
+}],
+"loop": false,
+"name": &"break",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dbox2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_45arr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mjehp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2t21f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0dpkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qx45b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_h3m70")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.5
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d81a6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ago88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tl6oh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i7ary")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_he6y5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lgn5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_htfhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xqxma")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="egg" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+linear_velocity = Vector2(250, -550)
+script = ExtResource("1_nnvfl")
+baby = ExtResource("2_nbqbm")
+
+[node name="Sprite" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, 10)
+scale = Vector2(0.8, 0.3)
+
+[node name="Polygon2D" type="Polygon2D" parent="Sprite"]
+color = Color(0.964706, 0.247059, 0.298039, 1)
+polygon = PackedVector2Array(-16, -48, -16, 16, 16, 16, 16, -48)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Sprite"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(4, -42, 12, -42, 12, -34, 4, -34)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ho8ud")
+}
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -5)
+scale = Vector2(0.570707, 0.53)
+sprite_frames = SubResource("SpriteFrames_527l7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_d81a6")
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="Hurtbox" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox"]
+position = Vector2(-61.0795, -9.71591)
+scale = Vector2(1.42045, 0.511363)
+polygon = PackedVector2Array(33.8481, -10.3333, 51.4481, -10.3333, 51.4481, 48.3334, 33.8481, 48.3334)
+
+[node name="Collision" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 14
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision"]
+position = Vector2(-61.0795, -9.71591)
+scale = Vector2(1.42045, 0.511363)
+polygon = PackedVector2Array(33.8481, -10.3333, 51.4481, -10.3333, 51.4481, 48.3334, 33.8481, 48.3334)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D2" to="." method="_on_animated_sprite_2d_2_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout" flags=18]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered" flags=18]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered" flags=18]
+[connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered" flags=18]

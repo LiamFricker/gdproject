@@ -1,13 +1,22 @@
-C:/Users/liamf/OneDrive/Documents/Godot_v4.0.2-stable_win64.exe/l
-res://Levels/Level0
-res://Levels/Level1
-res://Levels/Level2
-res://Levels/Level5
-res://Levels/Level4
-res://Levels/Level3
-res://Platforms to use
+res://Mobs
+res://System
 res://Art
+res://Player
+res://HUD (ingame)
+res://Levels/Level0
+res://Platforms to use
+C:/Users/liamf/OneDrive/Desktop/GameBuild2
+res://Levels/LevelA-2
+res://Levels/LevelA-3
+res://Levels/Level5
+res://Levels/Level2
+res://Levels/Level1
+res://Levels/Level3
+res://Levels/Level4
+res://Levels/LevelA-1
 res://Title Screen
+res://Art/Bottle
+res://
+C:/Users/liamf/OneDrive/Documents/Godot_v4.0.2-stable_win64.exe/l
 res://Levels/Level0/PlatformsL0
 res://Main
-res://

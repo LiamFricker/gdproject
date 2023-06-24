@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://baey5f7vwi74n"]
+
+[ext_resource type="Script" path="res://Player/knife.gd" id="1_kysey"]
+[ext_resource type="Texture2D" uid="uid://2nnxlssmubnj" path="res://Art/knife.png" id="2_7xcte"]
+
+[node name="knife" type="RigidBody2D"]
+collision_layer = 32
+collision_mask = 0
+gravity_scale = 0.0
+angular_damp = 100.0
+script = ExtResource("1_kysey")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8.229, -1, -8.229, -10, 8.546, -10, 8.546, -1)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(14, -5)
+rotation = -3.14159
+scale = Vector2(0.317, -0.438)
+texture = ExtResource("2_7xcte")
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+collision_layer = 0
+collision_mask = 142
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Area2D"]
+position = Vector2(-0.783928, 0)
+scale = Vector2(0.723701, 1)
+polygon = PackedVector2Array(22.8, 0, 51.8, 0, 51.8, -11, 22.8, -11)
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]

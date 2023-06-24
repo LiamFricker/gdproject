@@ -7,9 +7,14 @@ signal blockbreak
 #func ready():
 #	add_to_group("bricks")
 
-func _on_area_2d_body_entered(_body):
+#func _on_area_2d_body_entered(_body):
+#	blockbreak.emit(get_path())
+
+func _on_area_2d_area_entered(_area):
 	blockbreak.emit(get_path())
 
 func destroy() -> void:
 	#animation
 	queue_free()
+
+

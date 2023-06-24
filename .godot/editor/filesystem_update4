@@ -1,11 +1,13 @@
-res://Levels/Level3/level_3.tscn
+res://Player/Player.gd
+res://Player/Player.tscn
 res://Levels/Level0/PlatformsL0/MovingPlatform.gd
-res://Main/Main.tscn
-res://Main/Main.gd
-res://Levels/Level0/PlatformsL0/TileMap.tscn
-res://Levels/Level4/level_4.tscn
-res://Levels/Level5/level_5.tscn
-res://Levels/Level2/Level2.tscn
-res://Levels/Level1/level_1.tscn
-res://Title Screen/title_screen.tscn
+res://Levels/Level0/World.gd
 res://Levels/Level0/World.tscn
+res://Levels/Level0/PlatformsL0/TileMap.tscn
+res://Main/Main.tscn
+res://Title Screen/title_screen.tscn
+res://HUD (ingame)/HUD.tscn
+res://System/ability_spawner.tscn
+res://Mobs/square.tscn
+res://System/leaf_0.tscn
+res://Mobs/bonepillar.tscn
